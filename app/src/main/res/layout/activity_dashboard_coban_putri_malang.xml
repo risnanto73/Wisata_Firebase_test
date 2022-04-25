@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".coban_putri_malang.DashboardCobanPutriMalangActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutCardTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/teal_700">
+
+                    <TextView
+                        android:id="@+id/tv_title_pendapatan"
+                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:maxLines="2"
+                        android:text="Total Pendapatan Hari Ini" />
+
+                    <TextView
+                        android:id="@+id/tv_total_pendapatan_hari_ini"
+                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:hint="797979"
+                        android:textSize="30dp" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/search">
+
+                    <TextView
+                        android:id="@+id/tv_title_pengunjung"
+                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:maxLines="2"
+                        android:text="Total Pengunjung Hari Ini" />
+
+                    <TextView
+                        android:id="@+id/tv_total_pengunjung_hari_ini"
+                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:hint="7979797"
+                        android:textSize="30dp" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/colorAccent">
+
+                    <TextView
+                        android:id="@+id/tv_title_pengunjung_dewasa"
+                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:maxLines="2"
+                        android:text="Total Pengunjung Dewasa Hari ini" />
+
+                    <TextView
+                        android:id="@+id/tv_total_pengunjung_dewasa_hari_ini"
+                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:hint="797979"
+                        android:textSize="30dp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/home">
+
+                    <TextView
+                        android:id="@+id/tv_title_pengunjung_anak"
+                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:maxLines="2"
+                        android:text="Total Pengunjung Anak Hari Ini" />
+
+                    <TextView
+                        android:id="@+id/tv_total_pengunjung_anak_hari_ini"
+                        style="@style/TextAppearance.AppCompat.Title.Inverse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:hint="797979"
+                        android:layout_marginBottom="10dp"
+                        android:textSize="30dp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnGoData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="15dp"
+        android:text="Go to Data"
+        android:textAllCaps="false" />
+
+</RelativeLayout>
