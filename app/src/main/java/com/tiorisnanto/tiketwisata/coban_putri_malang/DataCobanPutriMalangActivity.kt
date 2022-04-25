@@ -52,6 +52,28 @@ class DataCobanPutriMalangActivity : AppCompatActivity() {
                 val adapter = ListAdapter(dataList)
                 recView.adapter = adapter
                 adapter.notifyDataSetChanged()
+
+                adapter.setOnItemClickListener(object : ListAdapter.onItemClickListener{
+                    override fun onItemClick(dataWisata: Int) {
+                        val intent = Intent(this@DataCobanPutriMalangActivity, DetailCobanPutriMalangActivity::class.java)
+                        intent.putExtra("id", dataList[dataWisata].id)
+                        intent.putExtra("tahun", dataList[dataWisata].tahun)
+                        intent.putExtra("bulan", dataList[dataWisata].bulan)
+                        intent.putExtra("hari", dataList[dataWisata].hari)
+                        intent.putExtra("jam", dataList[dataWisata].jam)
+                        intent.putExtra("hitungDewasa", dataList[dataWisata].hitungDewasa)
+                        intent.putExtra("hitungAnak", dataList[dataWisata].hitungAnak)
+                        intent.putExtra("jumlahDewasa", dataList[dataWisata].jumlahDewasa)
+                        intent.putExtra("jumlahAnak", dataList[dataWisata].jumlahAnak)
+                        intent.putExtra("totalHargaDewasa", dataList[dataWisata].totalHargaDewasa)
+                        intent.putExtra("totalHargaAnak", dataList[dataWisata].totalHargaAnak)
+                        intent.putExtra("totalHarga", dataList[dataWisata].totalHarga)
+                        intent.putExtra("jumlah", dataList[dataWisata].jumlah)
+                        intent.putExtra("imgQrCode", dataList[dataWisata].imgQrCode)
+                        startActivity(intent)
+                    }
+
+                })
             }
 
             override fun onCancelled(error: DatabaseError) {

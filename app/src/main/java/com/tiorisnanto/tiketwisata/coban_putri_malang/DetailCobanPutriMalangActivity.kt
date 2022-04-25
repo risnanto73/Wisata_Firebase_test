@@ -32,6 +32,19 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
         decreaseInteger()
     }
 
+    private fun setValuesToViews(){
+        binding.txtHitungDewasa.text = intent.getStringExtra("hitungDewasa")
+        binding.txtHitungAnak.text = intent.getStringExtra("hitungAnak")
+        binding.txtCountDewasa.text = intent.getStringExtra("jumlahDewasa")
+        binding.txtCountAnak.text = intent.getStringExtra("jumlahAnak")
+        binding.txtHargaAnak.text = intent.getStringExtra("totalHargaAnak")
+        binding.txtHargaDewasa.text = intent.getStringExtra("totalHargaDewasa")
+        binding.txtHargaTotal.text = intent.getStringExtra("totalHarga")
+        binding.txtCountTotal.text = intent.getStringExtra("jumlah")
+
+
+    }
+
     private fun saveData() {
         val ref = Firebase.database.reference
         val id = ref.push().key
@@ -183,4 +196,5 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
         }
 
     }
+
 }
