@@ -28,6 +28,7 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
             saveData()
         }
 
+        setValuesToViews()
         increaseInteger()
         decreaseInteger()
     }
