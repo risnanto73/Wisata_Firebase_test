@@ -40,6 +40,24 @@
                         android:text="Total Pendapatan Hari Ini" />
 
                     <TextView
+                        android:id="@+id/bulanHariIni"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" />
+
+                    <TextView
+                        android:id="@+id/bulanHariIni1"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" />
+                    <TextView
+                        android:id="@+id/bulanHariIni2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" />
+                    <TextView
+                        android:id="@+id/bulanHariIni3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" />
+
+                    <TextView
                         android:id="@+id/tv_total_pendapatan_hari_ini"
                         style="@style/TextAppearance.AppCompat.Title.Inverse"
                         android:layout_width="wrap_content"
@@ -88,7 +106,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         android:hint="7979797"
-                        android:textSize="30dp" />
+                        android:textSize="20dp" />
 
 
                 </RelativeLayout>
@@ -176,8 +194,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
-                        android:hint="797979"
                         android:layout_marginBottom="10dp"
+                        android:hint="797979"
                         android:textSize="30dp" />
 
                 </RelativeLayout>

@@ -47,36 +47,36 @@ class ListAdapter(private val dataWisata: List<DataWisata>) :
     inner class ViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
         fun bind(dataWisata: DataWisata) {
             with(itemView) {
-                row_year.text = dataWisata.tahun
-                row_month.text = dataWisata.bulan
+                row_year.text = dataWisata.tahun + " - "
+                row_month.text = dataWisata.bulan + " - "
                 row_day.text = dataWisata.hari
                 row_hour.text = dataWisata.jam
 
-                val date = "Tiket Valid Pada" + "${dataWisata.tahun}-${dataWisata.bulan}-${dataWisata.hari} dan anda adalah pengunjung ke ${dataWisata.id}"
-                val imgCoder = itemView.findViewById<ImageView>(R.id.row_img)
-                val qrCodeWriter = QRCodeWriter()
-                val bitMatrix = qrCodeWriter.encode(date, BarcodeFormat.QR_CODE, 512, 512)
-                val width = bitMatrix.width
-                val height = bitMatrix.height
-                val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
-
-                for (x in 0 until width) {
-                    for (y in 0 until height) {
-                        bmp.setPixel(x, y, if (bitMatrix.get(x, y)) Color.BLACK else Color.WHITE)
-                    }
-                }
-
-                val stream = ByteArrayOutputStream()
-                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream)
-                val byteArray = stream.toByteArray()
-
-                imgCoder.setImageBitmap(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size))
-
-                val qrCode = byteArray
-
-                Glide.with(context)
-                    .load(qrCode)
-                    .into(imgCoder)
+//                val date = "Tiket Valid Pada" + "${dataWisata.tahun}-${dataWisata.bulan}-${dataWisata.hari} dan anda adalah pengunjung ke ${dataWisata.id}"
+//                val imgCoder = itemView.findViewById<ImageView>(R.id.row_img)
+//                val qrCodeWriter = QRCodeWriter()
+//                val bitMatrix = qrCodeWriter.encode(date, BarcodeFormat.QR_CODE, 512, 512)
+//                val width = bitMatrix.width
+//                val height = bitMatrix.height
+//                val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+//
+//                for (x in 0 until width) {
+//                    for (y in 0 until height) {
+//                        bmp.setPixel(x, y, if (bitMatrix.get(x, y)) Color.BLACK else Color.WHITE)
+//                    }
+//                }
+//
+//                val stream = ByteArrayOutputStream()
+//                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream)
+//                val byteArray = stream.toByteArray()
+//
+//                imgCoder.setImageBitmap(BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size))
+//
+//                val qrCode = byteArray
+//
+//                Glide.with(context)
+//                    .load(qrCode)
+//                    .into(imgCoder)
 
                 itemView.setOnClickListener{
                     mListener.onItemClick(adapterPosition)

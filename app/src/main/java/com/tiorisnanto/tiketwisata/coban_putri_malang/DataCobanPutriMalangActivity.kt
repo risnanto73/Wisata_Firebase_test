@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.zxing.qrcode.QRCodeWriter
 import com.tiorisnanto.tiketwisata.R
 import com.tiorisnanto.tiketwisata.adapter.ListAdapter
 import com.tiorisnanto.tiketwisata.databinding.ActivityDataCobanPutriMalangBinding
@@ -36,9 +39,12 @@ class DataCobanPutriMalangActivity : AppCompatActivity() {
         recView.setHasFixedSize(true)
 
         dataList = arrayListOf<DataWisata>()
+
+    }
+
+    override fun onResume() {
+        super.onResume()
         getData()
-
-
     }
 
     private fun getData() {
@@ -69,16 +75,19 @@ class DataCobanPutriMalangActivity : AppCompatActivity() {
                         intent.putExtra("totalHargaAnak", dataList[dataWisata].totalHargaAnak)
                         intent.putExtra("totalHarga", dataList[dataWisata].totalHarga)
                         intent.putExtra("jumlah", dataList[dataWisata].jumlah)
-                        intent.putExtra("imgQrCode", dataList[dataWisata].imgQrCode)
+
+                        intent.putExtra("QrCode", dataList[dataWisata].imgQrCode)
+
                         startActivity(intent)
+                        finish()
                     }
 
                 })
             }
 
             override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@DataCobanPutriMalangActivity, error.message, Toast.LENGTH_SHORT).show()
             }
-
 
         })
     }
