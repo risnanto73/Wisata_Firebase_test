@@ -7,28 +7,6 @@
     android:orientation="vertical"
     tools:context=".coban_putri_malang.DetailCobanPutriMalangActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/GoCobanPutriMalang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:text="Go Coban Putri Malang"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -289,6 +267,7 @@
                             style="@style/TextAppearance.MaterialComponents.Subtitle1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="0"
                             android:layout_marginVertical="10dp"
                             android:layout_weight="1" />
                     </TableRow>
@@ -302,6 +281,7 @@
                             style="@style/TextAppearance.MaterialComponents.Subtitle1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="0"
                             android:layout_weight="1" />
                     </TableRow>
 
@@ -316,6 +296,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:text="0"
                             android:textColor="@color/purple_700" />
                     </TableRow>
 
@@ -348,6 +329,7 @@
                             style="@style/TextAppearance.MaterialComponents.Subtitle1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="0"
                             android:layout_marginVertical="10dp"
                             android:layout_weight="1" />
                     </TableRow>
@@ -360,6 +342,7 @@
                             android:id="@+id/txtHargaAnak"
                             style="@style/TextAppearance.MaterialComponents.Subtitle1"
                             android:layout_width="match_parent"
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:layout_weight="1" />
                     </TableRow>
@@ -375,6 +358,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:text="0"
                             android:textColor="@color/purple_700" />
                     </TableRow>
 
@@ -390,10 +374,10 @@
                 android:text="Cetak" />
 
             <Button
-                android:id="@+id/btnLihatData"
+                android:id="@+id/btnPrint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lihat Data" />
+                android:text="Print" />
 
         </LinearLayout>
     </ScrollView>

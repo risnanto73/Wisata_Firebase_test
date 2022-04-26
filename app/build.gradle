@@ -60,4 +60,7 @@ dependencies {
     implementation 'com.itextpdf:itextg:5.5.10'
     //Dexter
     implementation 'com.karumi:dexter:6.0.0'
+
+    //Printer
+    implementation 'com.github.novandikp:SimpleThermalPrinter:v1.1'
 }
