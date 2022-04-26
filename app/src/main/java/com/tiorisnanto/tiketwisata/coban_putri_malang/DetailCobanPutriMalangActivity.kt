@@ -1,19 +1,19 @@
 package com.tiorisnanto.tiketwisata.coban_putri_malang
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
-import com.tiorisnanto.tiketwisata.R
 import com.tiorisnanto.tiketwisata.databinding.ActivityDetailCobanPutriMalangBinding
 import com.tiorisnanto.tiketwisata.model.DataWisata
 import java.io.ByteArrayOutputStream
+
 
 class DetailCobanPutriMalangActivity : AppCompatActivity() {
 
@@ -67,6 +67,20 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
             }
         }
 
+
+//        bust format bon
+
+        val textToPrint = "<BIG>$year<BR>$bulan<BIG>BIG<BR><BIG><BOLD>" +
+                "string <SMALL> text<BR><LEFT>Left aligned<BR><CENTER>" +
+                "Center aligned<BR><UNDERLINE>underline text<BR><QR>$combine<BR>" +
+                "<CENTER>QR: 12345678<BR>Line<BR><LINE><BR>Double Line<BR><DLINE><BR><CUT>"
+        val intent = Intent("pe.diegoveloper.printing")
+        //intent.setAction(android.content.Intent.ACTION_SEND);
+        //intent.setAction(android.content.Intent.ACTION_SEND);
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT, textToPrint)
+        startActivity(intent)
+
         val stream = ByteArrayOutputStream()
         bmp.compress(Bitmap.CompressFormat.PNG, 100, stream)
         val byteArray = stream.toByteArray()
@@ -112,16 +126,19 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
             val hargaDewasa = 10000
             val hargaAnak = 5000
             if (binding.txtHitungDewasa.text.toString().toInt() > 0) {
-                binding.txtHitungDewasa.text = (binding.txtHitungDewasa.text.toString().toInt() - 1).toString()
+                binding.txtHitungDewasa.text =
+                    (binding.txtHitungDewasa.text.toString().toInt() - 1).toString()
                 binding
                     .txtCountDewasa.text = binding.txtHitungDewasa.text.toString()
                 binding.txtHargaDewasa.text =
                     (binding.txtHitungDewasa.text.toString().toInt() * hargaDewasa).toString()
                 binding.txtCountTotal.text =
-                    (binding.txtHitungDewasa.text.toString().toInt() + binding.txtHitungAnak.text.toString()
+                    (binding.txtHitungDewasa.text.toString()
+                        .toInt() + binding.txtHitungAnak.text.toString()
                         .toInt()).toString()
                 binding.txtHargaTotal.text =
-                    (binding.txtHitungDewasa.text.toString().toInt() * hargaDewasa + binding.txtHitungAnak.text.toString()
+                    (binding.txtHitungDewasa.text.toString()
+                        .toInt() * hargaDewasa + binding.txtHitungAnak.text.toString()
                         .toInt() * hargaAnak).toString()
             }
         }
@@ -130,15 +147,18 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
             val hargaAnak = 5000
             val hargaDewasa = 10000
             if (binding.txtHitungAnak.text.toString().toInt() > 0) {
-                binding.txtHitungAnak.text = (binding.txtHitungAnak.text.toString().toInt() - 1).toString()
+                binding.txtHitungAnak.text =
+                    (binding.txtHitungAnak.text.toString().toInt() - 1).toString()
                 binding.txtCountAnak.text = binding.txtHitungAnak.text.toString()
                 binding.txtHargaAnak.text =
                     (binding.txtHitungAnak.text.toString().toInt() * hargaAnak).toString()
                 binding.txtCountTotal.text =
-                    (binding.txtHitungDewasa.text.toString().toInt() + binding.txtHitungAnak.text.toString()
+                    (binding.txtHitungDewasa.text.toString()
+                        .toInt() + binding.txtHitungAnak.text.toString()
                         .toInt()).toString()
                 binding.txtHargaTotal.text =
-                    (binding.txtHitungDewasa.text.toString().toInt() * hargaDewasa + binding.txtHitungAnak.text.toString()
+                    (binding.txtHitungDewasa.text.toString()
+                        .toInt() * hargaDewasa + binding.txtHitungAnak.text.toString()
                         .toInt() * hargaAnak).toString()
             }
         }
@@ -151,16 +171,19 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
             val hargaDewasa = 10000
             val hargaAnak = 5000
             if (binding.txtHitungDewasa.text.toString().toInt() >= 0) {
-                binding.txtHitungDewasa.text = (binding.txtHitungDewasa.text.toString().toInt() + 1).toString()
+                binding.txtHitungDewasa.text =
+                    (binding.txtHitungDewasa.text.toString().toInt() + 1).toString()
                 binding
                     .txtCountDewasa.text = binding.txtHitungDewasa.text.toString()
                 binding.txtHargaDewasa.text =
                     (binding.txtHitungDewasa.text.toString().toInt() * hargaDewasa).toString()
                 binding.txtCountTotal.text =
-                    (binding.txtHitungDewasa.text.toString().toInt() + binding.txtHitungAnak.text.toString()
+                    (binding.txtHitungDewasa.text.toString()
+                        .toInt() + binding.txtHitungAnak.text.toString()
                         .toInt()).toString()
                 binding.txtHargaTotal.text =
-                    (binding.txtHitungDewasa.text.toString().toInt() * hargaDewasa + binding.txtHitungAnak.text.toString()
+                    (binding.txtHitungDewasa.text.toString()
+                        .toInt() * hargaDewasa + binding.txtHitungAnak.text.toString()
                         .toInt() * hargaAnak).toString()
             }
         }
@@ -169,15 +192,18 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
             val hargaAnak = 5000
             val hargaDewasa = 10000
             if (binding.txtHitungAnak.text.toString().toInt() >= 0) {
-                binding.txtHitungAnak.text = (binding.txtHitungAnak.text.toString().toInt() + 1).toString()
+                binding.txtHitungAnak.text =
+                    (binding.txtHitungAnak.text.toString().toInt() + 1).toString()
                 binding.txtCountAnak.text = binding.txtHitungAnak.text.toString()
                 binding.txtHargaAnak.text =
                     (binding.txtHitungAnak.text.toString().toInt() * hargaAnak).toString()
                 binding.txtCountTotal.text =
-                    (binding.txtHitungDewasa.text.toString().toInt() + binding.txtHitungAnak.text.toString()
+                    (binding.txtHitungDewasa.text.toString()
+                        .toInt() + binding.txtHitungAnak.text.toString()
                         .toInt()).toString()
                 binding.txtHargaTotal.text =
-                    (binding.txtHitungDewasa.text.toString().toInt() * hargaDewasa + binding.txtHitungAnak.text.toString()
+                    (binding.txtHitungDewasa.text.toString()
+                        .toInt() * hargaDewasa + binding.txtHitungAnak.text.toString()
                         .toInt() * hargaAnak).toString()
             }
         }
