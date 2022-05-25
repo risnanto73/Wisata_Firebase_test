@@ -160,11 +160,12 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
         val myRef = database.getReference("Data_Wisata_Coban_Putri_Malang")
         myRef.push().setValue(data)
 
-        binding.btnPrint.visibility = android.view.View.GONE
+        binding.btnPrint.visibility = View.GONE
         finish()
     }
 
     private fun decreaseInteger() {
+
         binding.btnMinDewasa.setOnClickListener {
             val hargaDewasa = 10000
             val hargaAnak = 5000
