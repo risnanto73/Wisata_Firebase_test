@@ -5,17 +5,21 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.dantsu.escposprinter.EscPosCharsetEncoding
-import com.dantsu.escposprinter.EscPosPrinter
+import com.bumptech.glide.load.resource.bitmap.BitmapResource
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
+import com.itextpdf.text.pdf.codec.BmpImage.getImage
+import com.novandikp.simplethermalprinter.AlignColumn
+import com.novandikp.simplethermalprinter.ColumnPrinter
+import com.novandikp.simplethermalprinter.PrintTextBuilder
 import com.tiorisnanto.tiketwisata.databinding.ActivityDetailCobanPutriMalangBinding
 import com.tiorisnanto.tiketwisata.model.DataWisata
 import kotlinx.android.synthetic.main.activity_detail_coban_putri_malang.*
-import java.io.*
+import java.io.ByteArrayOutputStream
 import java.util.*
 
 
@@ -55,10 +59,7 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
             binding.txtCountTotal.text = intent.getStringExtra("jumlah")
 
 
-            binding.btnMinAnak.visibility = View.GONE
-            binding.btnMinDewasa.visibility = View.GONE
-            binding.btnPlusAnak.visibility = View.GONE
-            binding.btnPlusDewasa.visibility = View.GONE
+
             binding.btnSave.visibility = View.GONE
             binding.btnPrint.visibility = View.VISIBLE
 
@@ -71,7 +72,21 @@ class DetailCobanPutriMalangActivity : AppCompatActivity() {
     }
 
     private fun doPrint() {
-
+        val resultPrint = PrintTextBuilder()
+        resultPrint.addTitle("Faktur Penjualan")
+        resultPrint.addDivider()
+        resultPrint.addTextPair("Pelanggan", "Novandi Kevin Pratama")
+        resultPrint.addTextPair("Faktur", "000001")
+        resultPrint.addDivider()
+        for (i in 0..2) {
+            val columnNama = ColumnPrinter("Baju Korea Keren")
+            val columnSubHarga = ColumnPrinter("12.000", AlignColumn.RIGHT)
+            resultPrint.addColumn(columnNama, columnSubHarga)
+            resultPrint.addText("x2")
+            resultPrint.addEnter()
+        }
+        resultPrint.addDivider()
+        resultPrint.addTextPair("Total", "40.000", AlignColumn.RIGHT)
     }
 
     private fun saveData() {
